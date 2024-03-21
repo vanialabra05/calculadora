@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Rosita Claro</title>
+    <style>
+        body {
+            background-color: #fce4ec; /* Color rosa claro */
+            
+        }
+       
+        
+    <meta charset="UTF-8"> /*Define la codificación de caracteres del documento como UTF-8 para admitir caracteres especiales.*/
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> /* Se utiliza para controlar cómo se ajusta y escala el contenido en dispositivos móviles.*/
+    <title>Calculadora de Conversión de Pesos a Dólares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container { /*Define el contenedor principal que contiene la calculadora.*/
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="number"] { /*Establecen estilos para los elementos de entrada numérica y el botón de envío.*/
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+     
+</head>
+<body>
+  
+
+<div class="container"> <!--Crea un contenedor principal para el contenido de la calculadora. -->
+    
+    <h2>Calculadora de Conversión de Pesos a Dólares</h2>
+    <form id="currencyConverter"> <!-- Formulario que contiene la entrada de usuario y el botón de envío. El id se utiliza en JavaScript para acceder al formulario. -->
+        <label for="pesos">Cantidad de Pesos:</label>
+        <input type="number" id="pesos" name="pesos" placeholder="Ingrese la cantidad de pesos" step="any" required> <!-- Campo de entrada donde el usuario puede ingresar la cantidad de pesos a convertir.-->
+        <input type="submit" value="Convertir">
+    </form>
+    <div id="result"></div> <!-- Un div vacío donde se mostrará el resultado de la conversión-->
+</div>
+
+<script>
+    document.getElementById('currencyConverter').addEventListener('submit', function(event) {
+        event.preventDefault();
+        var pesos = parseFloat(document.getElementById('pesos').value);
+        var conversionRate = 0.050; // Tasa de conversión actual (1 peso mexicano = 0.050 dólares estadounidenses)
+        var dollars = pesos * conversionRate; 
+        document.getElementById('result').innerHTML = pesos + ' pesos equivalen a ' + dollars.toFixed(2) + ' dólares.';
+    });
+</script>
+
+
+
+</body>
+</html>
